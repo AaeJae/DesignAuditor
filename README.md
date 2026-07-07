@@ -1,6 +1,8 @@
 # Design Auditor (Chromium-based browser Extension)
 
 Design Auditor is a extension for auditing UI/UX Designs on live pages. It adds an in-page panel that lets you inspect element styles, find semantic token usage, compare Light vs Dark deltas across two synced tabs, and export audit reports.
+<img width="800" height="407" alt="image" src="https://github.com/user-attachments/assets/21eecb08-f48b-44ea-9805-ef3511a16a41" />
+
 <img width="925" height="565" alt="image" src="https://github.com/user-attachments/assets/0ba607d4-b761-457c-8163-63aae8f91731" />
 
 ## What It Does

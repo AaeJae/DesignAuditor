@@ -1,0 +1,645 @@
+#ldc-delta-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(248, 245, 226, 0.95);
+    color: #424040;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: sans-serif;
+    line-height: 1.45;
+    width: 340px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    min-width: 240px;
+    z-index: 999999 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    backdrop-filter: blur(4px);
+    display: none;
+    overscroll-behavior: contain;
+}
+
+/* Toggles */
+#ldc-mode-toggle,
+#ldc-theme-toggle {
+    display: flex;
+    gap: 8px;
+    
+}
+
+.ldc-toggle-option {
+    flex:2;
+    text-align: center;
+    padding: 4px 6px;
+    border-radius: 6px;
+    width: 20px;
+    height:20px;
+    border: 1px solid #b0a89a;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ldc-toggle-active {
+    background: #d9d1b8;
+    font-weight: bold;
+}
+
+.ldc-toggle-option-disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.ldc-toggle-option-disabled.ldc-toggle-active {
+    background: transparent;
+    font-weight: normal;
+}
+
+/* Theme toggle icons */
+#ldc-theme-toggle {
+    display: flex;
+    gap: 6px;
+}
+
+.ldc-theme-icon, #ldc-dom-up, #ldc-dom-down, #ldc-dom-left, #ldc-dom-right {
+    background:transparent;
+    text-align: center;
+    font-size: 12px;
+    width: 20px;
+    height:20px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid #b0a89a;
+    user-select: none;
+}
+
+#ldc-auditor-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#ldc-auditor-controls strong {
+    margin-right: 4px;
+}
+
+#ldc-collapse-all {
+    background: transparent;
+    border: 0;
+    color: #4f6fbf;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 1;
+    margin: 0;
+    padding: 0 0 0 4px;
+    white-space: nowrap;
+}
+
+#ldc-download-deltas {
+    background: #e7dfc4;
+    border: 1px solid #b0a89a;
+    color: #4f6fbf;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 1.2;
+    margin: 0;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+#ldc-download-deltas:disabled {
+    color: #9f998d;
+    cursor: not-allowed;
+}
+
+#ldc-download-csv,
+#ldc-download-deltas {
+    position: relative;
+}
+
+.ldc-btn-loading {
+    pointer-events: none;
+}
+
+.ldc-btn-loading::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    vertical-align: -1px;
+    animation: ldc-spin 0.7s linear infinite;
+}
+
+@keyframes ldc-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.ldc-theme-icon.ldc-toggle-active {
+    background: #d9d1b8;
+    font-weight: bold;
+}
+/* Device dropdown */
+#ldc-device-dropdown {
+    width: 100%;
+    padding: 6px;
+    border-radius: 999px;
+    border: 1px solid #b0a89a;
+    margin-bottom: 6px;
+}
+
+/* Tabs */
+#ldc-tab-bar {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.ldc-tab {
+    text-align: center;
+    flex:1;
+    padding: 6px 8px;
+    border-radius: 999px;
+    border: 1px solid #b0a89a;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.ldc-tab-active {
+    background: #e7dfc4;
+    font-weight: bold;
+}
+
+.ldc-tab-panel {
+    display: none;
+}
+
+.ldc-tab-panel-active {
+    display: block;
+}
+
+/* Scrollable content */
+#ldc-tab-content {
+    height: min(750px, calc(100vh - 180px));
+    overflow-y: auto;
+    padding-right: 4px;
+    overscroll-behavior: contain;
+}
+
+#ldc-tab-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+#ldc-tab-content::-webkit-scrollbar-thumb {
+    background: #b8b0a0;
+    border-radius: 4px;
+}
+
+#ldc-tab-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Section dividers */
+.ldc-section {
+    border-top: 1px solid #d0c8b8;
+    padding-top: 8px;
+    margin-top: 10px;
+}
+
+.ldc-section-header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 12px;
+}
+
+.ldc-section.collapsed .ldc-section-body {
+    display: none;
+}
+
+/* Indented properties */
+.ldc-prop {
+    margin-left: 12px;
+    padding-left: 6px;
+    border-left: 2px solid #e0d8c8;
+    margin-bottom: 6px;
+    font-size: 12px;
+}
+
+.ldc-state-variants {
+    margin: 4px 0 0 16px;
+    padding: 0;
+    color: #6f6a60;
+    font-size: 11px;
+    line-height: 1.35;
+}
+
+.ldc-state-variants li {
+    margin: 0;
+    padding: 0;
+}
+
+.ldc-prop-badges {
+    display: inline-flex;
+    gap: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.ldc-prop-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 12px;
+    height: 12px;
+    padding: 0 4px;
+    border-radius: 999px;
+    border: 1px solid #c8bea8;
+    background: #f3ecd9;
+    color: #6f6856;
+    font-size: 10px;
+    line-height: 1;
+}
+
+.ldc-prop-badge-inherited {
+    width: 12px;
+    min-width: 12px;
+    padding: 0;
+    font-weight: bold;
+}
+
+.ldc-csv-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.ldc-csv-helper,
+.ldc-csv-empty {
+    font-size: 12px;
+    color: #6f6856;
+}
+
+.ldc-csv-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 160px;
+    min-height: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.ldc-csv-item {
+    display: flex;
+    gap: 8px;
+    padding: 8px 10px;
+    padding-right: 24px;
+    border: 1px solid #d9cfb7;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.35);
+    position: relative;
+}
+
+.ldc-csv-item-index {
+    flex: 0 0 auto;
+    font-size: 11px;
+    font-weight: bold;
+    color: #6f6856;
+    padding-top: 1px;
+}
+
+.ldc-csv-item-body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.ldc-csv-remove {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    color: #6f6856;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.ldc-csv-remove:hover {
+    color: #3f3b32;
+}
+
+.ldc-csv-item-description {
+    font-size: 12px;
+    font-weight: 600;
+    color: #424040;
+}
+
+.ldc-csv-item-selector {
+    font-size: 11px;
+    color: #6f6856;
+    word-break: break-word;
+}
+
+#ldc-download-csv {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid #b0a89a;
+    background: #e7dfc4;
+    color: #4f6fbf;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#ldc-download-csv:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.ldc-auditor-download-entry {
+    position: sticky;
+    bottom: 0;
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #d0c8b8;
+    background: rgba(248, 245, 226, 0.96);
+}
+
+.ldc-open-csv-selection-btn {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid #b0a89a;
+    background: #e7dfc4;
+    color: #4f6fbf;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.ldc-export-summary {
+    flex: 0 1 auto;
+    margin-top: 10px;
+    border-top: 1px solid #d0c8b8;
+    padding-top: 10px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.ldc-export-summary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.ldc-export-summary-heading {
+    font-size: 12px;
+    font-weight: 700;
+    color: #424040;
+}
+
+.ldc-export-summary-toggle-all {
+    flex: 0 0 auto;
+    border: 0;
+    background: transparent;
+    color: #4f6fbf;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.ldc-export-summary-body {
+    max-height: 260px;
+    overflow: auto;
+    min-height: 0;
+}
+
+.ldc-export-summary-collapsed .ldc-export-summary-body {
+    display: none;
+}
+
+.ldc-export-summary-meta {
+    font-size: 11px;
+    color: #6f6856;
+    margin: 4px 0 8px;
+}
+
+.ldc-export-summary-section {
+    margin-top: 8px;
+}
+
+.ldc-export-summary-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #4a453c;
+    margin-bottom: 4px;
+}
+
+.ldc-export-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+}
+
+.ldc-export-summary-table th,
+.ldc-export-summary-table td {
+    border: 1px solid #d8cfb8;
+    padding: 3px 4px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.ldc-export-summary-table th {
+    background: #efe7cf;
+    font-weight: 700;
+}
+
+/* Remote sync tooltip — fixed-position, JS-positioned to avoid overflow clipping */
+.ldc-prop-has-remote {
+    cursor: default;
+}
+
+#ldc-remote-tooltip {
+    position: fixed;
+    z-index: 10000001;
+    background: #2d2a22;
+    color: #f0e8cc;
+    font-size: 11px;
+    font-family: sans-serif;
+    line-height: 1.5;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-width: 280px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    pointer-events: none;
+}
+
+.ldc-remote-tooltip-label {
+    font-weight: bold;
+    color: #f7c84e;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.ldc-remote-tooltip-value {
+    display: block;
+}
+
+/* See more */
+.ldc-see-more-toggle {
+    cursor: pointer;
+    color: #4f6fbf;
+    font-size: 11px;
+}
+
+.ldc-see-more-body {
+    display: none;
+}
+
+.ldc-see-more.expanded .ldc-see-more-body {
+    display: block;
+}
+
+/* Highlight */
+.ldc-highlight {
+    outline: 3px solid #ff4081 !important;
+    outline-offset: 2px !important;
+    transition: outline 0.15s ease;
+}
+
+.ldc-delta-diff {
+    outline: 3px solid #ffb300 !important;
+    outline-offset: 2px !important;
+    transition: outline 0.15s ease;
+}
+
+.ldc-delta-diff:hover,
+.ldc-delta-diff.ldc-highlight:hover {
+    outline: 3px solid #e53935 !important;
+}
+
+.ldc-token-item:hover {
+    text-decoration: underline;
+}
+#ldc-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+#ldc-view-selector-wrap {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+#ldc-view-selector {
+    flex: 4;
+    padding: 6px;
+    border-radius: 999px;
+    border: 1px solid #b0a89a;
+    background: #f7f2df;
+    color: #424040;
+    font-size: 12px;
+}
+
+.ldc-sync-button-icon {
+    flex: 1;
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid #b0a89a;
+    background: #d9d1b8;
+    cursor: pointer;
+    font-size: 14px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ldc-sync-button-icon:disabled {
+    background: #e8e1ce;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.ldc-sync-button-icon:hover:not(:disabled) {
+    background: #cfc8a5;
+}
+
+.ldc-sbs-instructions {
+    border: 1px solid #d0c8b8;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f5efd9;
+    margin-top: 6px;
+}
+
+.ldc-sbs-text {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.ldc-sync-tabs-btn {
+    width: 100%;
+    padding: 6px;
+    border-radius: 999px;
+    border: 1px solid #b0a89a;
+    background: #d9d1b8;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.ldc-sync-tabs-btn:disabled {
+    background: #e8e1ce;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.ldc-sync-tabs-status {
+    margin-top: 6px;
+    font-size: 11px;
+    color: #5a5548;
+}
+
+/* Mode toggle stays the same */
+#ldc-mode-toggle {
+    display: flex;
+    gap: 6px;
+}
+
+
+

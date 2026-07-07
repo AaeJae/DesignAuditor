@@ -1,0 +1,120 @@
+Area,Subarea,Selector,Description
+Header,Container,b_respl b_sbText > #b_header,Top banner / header region
+Header,Logo,b_respl b_sbText > b_logoArea,Bing logo link area
+Header,Logo,"h1[aria-label=""Back to Bing search""]",Logo heading - back to Bing search
+Header,Searchbox with icons,b_searchboxForm,Search box form wrapper
+Header,Searchbox with icons,b_searchboxForm > qfc b_searchbox,Main search input textarea
+Header,Searchbox with icons,b_searchboxForm > tool_button_sb,AI tools / make images drawer button
+Header,Searchbox with icons,b_searchboxForm > sb_clrhov,Clear text button and clear icon
+Header,Searchbox with icons,b_searchboxForm > #sb_sbi,Visual / image search (camera) icon
+Header,Searchbox with icons,b_searchboxForm > mic_cont icon partner,Microphone (voice search) icon
+Header,Searchbox with icons,b_searchboxForm > #sa_qs,Search submit button
+Header,RightIcons-ProfileIcon,b_respl b_sbText > id_tooltip_container,Account / Rewards / Preferences container
+Header,RightIcons-ProfileIcon,b_respl b_sbText > id_button tooltip linkBtn,Profile button (sign in)
+Header,RightIcons-ProfileIcon,b_respl b_sbText > id_avatar,Profile avatar / picture
+Header,RightIcons-MSRewards,"#id_rh_w[aria-label=""Microsoft Rewards""]",Microsoft Rewards icon
+Header,RightIcons-ProfileIcon,b_respl b_sbText > langLabel langdisp,Language change control
+Scope,Container,b_scopebar,Scope bar navigation
+Scope,All,b_scopebar > b_active,All / Web scope tab (active)
+Scope,Copilot,b_scopebar > #b-scopeListItem-copilotsearch,Copilot Search scope tab
+Scope,Images,b_scopebar > #b-scopeListItem-images,Images scope tab
+Scope,Videos,b_scopebar > #b-scopeListItem-video,Videos scope tab
+Scope,Maps,b_scopebar > #b-scopeListItem-local,Maps / local scope tab
+Scope,News,b_scopebar > #b-scopeListItem-news,News scope tab
+Scope,Shopping,b_scopebar > b_sp_over_item b_scopebar_item,Shopping scope tab
+Scope,More,b_scopebar > #b-scopeListItem-conv,Conversation scope tab
+Scope,More,b_scopebar > b_sp_over_item b_scopebar_item,Flights scope tab
+Scope,More,b_scopebar > b_sp_over_item b_scopebar_item,Travel hub scope tab
+Scope,More,b_scopebar > #b-scopeListItem-menu,More (overflow menu) scope tab
+Scope,More,b_respl b_sbText > linkBtn,Tools menu item
+Scope,CopilotAnswer_Branding,b_ans > cs_txt,Copilot Search branding strip
+Scope,ScopeInlineTools_Flyout,b_respl b_sbText > scicn onusvd,Inline scope control flyout
+Tween,SiteIcons and result count,b_respl b_sbText > b_hidetoggletween,Tween bar between scope and results
+Tween,SiteIcons and result count,b_respl b_sbText > #b_tween_searchTools,Tween search tools wrapper
+Tween,SiteIcons and result count,b_respl b_sbText > ftrH,Date filter trigger and dropdown
+Tween,SiteIcons and result count,b_respl b_sbText > ftrD,Date filter element
+WPTabs,Container,b_wpt_container lgwjsfix wpt_rmspc,WholePageTemplate (entity) container
+WPTabs,Container,b_wpt_container lgwjsfix wpt_rmspc,WholePageTemplate ML container
+WPTabs,Title,.b_wpt_header h2 / .l_wptcrd_ovrview,WPT card header / Overview title
+WPTabs,ButtonTabs,cards card0,WPT magazine grid card tabs
+WPTabs,EntityAnswer_HeroTab,b_algo > b_wikiRichcard_noHeroSection > b_wikiRichcard > b_dmtab tab-active,Entity hero pivot tabs
+Magazine,Container,b_wpt_container lgwjsfix wpt_rmspc > [WholePageTemplate.MagazineContainer],Magazine container
+Magazine,Grid,b_wpt_container lgwjsfix wpt_rmspc > gs_Grid grid,Magazine card grid
+Magazine,Card-cell,cards card0,Individual magazine card cell
+Magazine,GenAI/Fact card,b_wpt_container lgwjsfix wpt_rmspc > lite-mag-card lite_acf > b_acf_card b_acf_bckgnd,GenAI Overview / fact card
+Magazine,Fact card,b_wpt_container lgwjsfix wpt_rmspc > lite-mag-card lite_acf > b_acf_card b_acf_bckgnd > l_wptgenai_factlist,GenAI fact block
+Magazine,Video card,mc_vtvc mc_vtvc_cc creator,Video card (mc_vtvc)
+Magazine,Video card,mc_vtvc mc_vtvc_cc creator > mc_vtvc_link > mc_vtvc_meta > mc_vtvc_title,Video card title/meta
+Magazine,Image collage,b_wpt_container lgwjsfix wpt_rmspc > lite-mag-card lite_acf > b_acf_card b_acf_bckgnd,Image / collage carousel card
+Magazine,Carousel,b_wpt_container lgwjsfix wpt_rmspc > b_slideexp,Slide-experience carousel
+Magazine,Carousel,[id^=slideexp] [id$=prevbtn] / [id$=nextbtn],Carousel prev/next chevron buttons
+Magazine,Local/Maps card,cards card0 > ns_mag_ht ns_mag_ht_link ns_acft2,Magazine headline / local link card
+Magazine,News card,cards card1 > ans_nws na_card_all_effect ns_acf ns_acft2 > nws_sh,News answer card / title
+Magazine,News card,b_wpt_container lgwjsfix wpt_rmspc > nscard_sa > nscard_header > nscard_ttl,News card title and caption
+Magazine,Subdivided card,b_ans b_mop > acf_cont acf_mainline,ACF subdivided container card
+Magazine,WholePageTemplate_MagazineV3,b_wpt_container lgwjsfix wpt_rmspc > [WholePageTemplate.MagazineContainer],Magazine WPT v3 container (feed DynamicMagazineAlgo1_Deeplink3)
+Magazine,NewsAnswer_Container,b_respl b_sbText > ans_nws,News answer cluster container
+Magazine,NewsAnswer_Item,acf_news_container > acf_news_tit,"News answer item: title, snippet, more link"
+Magazine,ImageAnswer_Collage,b_algo > rcimgcol b_imgclg_ovrctn,Image collage answer card
+Magazine,AttributionAnswer_Card,b_acf_card acf_hov_bexp acf_news b_att_c b_att_no_wh > b_att_img,Attribution / source card
+Magazine,DiverseContentVideoAnswer_Hero,mc_vtvc mc_vtvc_cc,Video tile answer (fid VideoAnswer)
+Magazine,FinanceAnswer_StockQuote,b_wpt_container lgwjsfix wpt_rmspc > fin_quoteCard > fin_quotePrice > b_focusTextExtraSmall fin_change b_posText b_positive,"Stock quote header: price, change, market status (feed MagazineFinance)"
+Magazine,FinanceAnswer_Graph,fin_graph > fin_ajax_card--acf-migration > fin_gbody fin_ns,Stock price graph
+Magazine,FinanceAnswer_DataTable,b_wpt_container lgwjsfix wpt_rmspc > fin_quoteCard > fin_dtcell_c > fin_dtval,Finance key-stats data table
+Magazine,FinanceAnswer_L3Tabs,b_ans > fin_l3tc,Finance sub-tab navigation (e.g. Summary/Charts)
+Magazine,EntityAnswer_InfoCard,enti_c > enti_stxt b_demoteText,Company entity info card
+Magazine,NewsAnswer_ACFContainer,b_ans b_top b_topborder > nsacf_container nsacft2 nsacfbt,Finance news answer container
+Magazine,ReferenceAnswer_QnATuringGen,"#GenAIOverviewCard acf-thumbs-up-down-feedback[data-scenario=""QnATuringGen""]",GenAI generative overview answer (feed QnATuringGen-GenAI5minichat)
+Magazine,ReferenceAnswer_GenAIDisclaimer,b_ans > gs_secctrl_item invrs gs_aidisc,GenAI disclaimer / info bubble
+Magazine,MultimediaVideoAnswer_VideoRecoCarousel,mm_vrc isvctrl,Video recommendation category carousel
+Magazine,DiverseContentVideoAnswer_Hero,mc_vtvc mc_vtvc_cc creator > mc_vtvc_link > mc_vtvc_meta_block_area > mc_vtvc_meta_block,Video answer hero tile (creator)
+Magazine,LocalCardAnswer_EntityCardWithMapAndImage,b_loccardans b_lcmgzsubcrd > b_lcmgzentitycard b_lcmgzml,Local entity card with map and image (answerService LocalCard)
+Magazine,MapsAnswer_MapEmbed,b_loccardans b_lcmgzsubcrd > b_lcmgzentitycard b_lcmgzml > b_lcmgzimgmap > acf-map__img-embed acf-map__img-embed--aerial,Embedded map (BootstrapMapsAnswer/MapsAnswer)
+Magazine,MapsAnswer_AerialLabels,b_loccardans b_lcmgzsubcrd > b_lcmgzentitycard b_lcmgzml > b_lcmgzimgmap > acf-map__img-embed acf-map__img-embed--aerial,Map aerial / labels layers
+Magazine,LocalAnswer_InfoCard,b_loccardans b_lcmgzsubcrd > b_lcmgzentitycard b_lcmgzml > b_lcmgzinfocard b_ifot > b_magiftf,Local info card (hours/address rows)
+Magazine,ImageAnswer_LocalEntity,b_ans b_mop b_imgansacf > acfImgAns,Local entity image answer / collage
+Magazine,ImageAnswer_PhotoCarousel,b_loccardans b_lcmgzsubcrd > b_lcmgzentitycard b_lcmgzml > b_lcmgzimgmap > acf-carousel-pbp__item,Local photo carousel
+Magazine,LocalAnswer_ActionButtons,b_loccardans b_lcmgzsubcrd > b_lcmgzentitycard b_lcmgzml > b_lcmgzinfocard b_ifot > b_directionBtn,Local actions: directions / website
+Magazine,LocalAnswer_SuggestEdit,b_loccardans b_lcmgzsubcrd > b_lcmgzentitycard b_lcmgzml > b_lcmgzinfocard b_ifot > b_segbtn,Suggest an edit control
+Magazine,EntityAnswer_Title,b_loccardans b_lcmgzsubcrd > b_lcmgzentitycard b_lcmgzml > b_lcmgzinfocard b_ifot > eh_title b_entityTitle,Local entity title
+Magazine,DictionaryAnswer_DefinitionCard,cards card0 b_overlay_present > common-definition-content,Definition card content (data-scenario DefinitionCardScenario)
+Magazine,DictionaryAnswer_DefinitionCard,cards card0 b_overlay_present > common-title-def-word,Headword title in definition card
+Magazine,DictionaryAnswer_DefinitionCard,cards card0 b_overlay_present > common-definitions-pos-inner dict-hide,Part-of-speech grouping in definition card
+Magazine,DictionaryAnswer_PronunciationCard,cards card1 > pronunciation_text,Pronunciation phonetic text (data-scenario PronunciationCardScenario)
+Magazine,DictionaryAnswer_PronunciationCard,cards card1 > pronunciation_audio_icon,Pronunciation audio play icon
+Magazine,DictionaryAnswer_OriginCard,cards card0 b_overlay_present > short-def calc,Origin/etymology card (data-scenario OriginCardScenario)
+Magazine,FlightAnswer_FlightResultsHeader,b_vPanel > fb_flightResultsTitle,Flight results header title
+Magazine,FlightAnswer_FlightList,fb_FltsList > fb_FltSingle fb_shw_ovrly,Single flight row within flights list
+Magazine,FlightAnswer_FlightList,fb_FltsList > fb_carrierImg,Carrier/airline logo image in flight row
+Magazine,FlightAnswer_FlightList,fb_FltsList > fb_durNStops,Duration and number of stops
+Magazine,FlightAnswer_FlightList,fb_FltsList > fb_totalfare,Total fare price for flight
+Magazine,FlightAnswer_SeeMore,b_vPanel > fb_seemorebutton,See more flights expander button
+Magazine,JobSearchAnswer_JobListings,jb_gbContainer > jb_title,Jobs answer header title (data-tag JobSearch.JobsMagazineV2JobListingsV2)
+Magazine,JobSearchAnswer_JobListings,jb_post_list_container > jb_post_list > jb_post,Individual job posting card
+Magazine,JobSearchAnswer_JobListings,jb_post_list_container > jb_post_list > jb_post_title,Job posting title
+Magazine,JobSearchAnswer_JobListings,jb_post_list_container > jb_post_list > jb_post_company,Job posting company name
+Magazine,JobSearchAnswer_JobListings,jb_post_list_container > jb_post_list > jb_post_location,Job posting location
+Magazine,JobSearchAnswer_Filters,jb_filters_container > jb_filter,Job search filter chip
+Magazine,RecipeAnswer_Header,rcp_mag > recipes-header,Recipe answer header
+Magazine,RecipeAnswer_Carousel,rcp_carousel,Recipe carousel container
+Magazine,RecipeAnswer_Carousel,rcp_carousel > b_acf_card > recipe-image-card,Recipe image card within carousel
+Magazine,RecipeAnswer_AttributionCard,b_acf_card acf_hov_bexp recipe-att-card b_att_c b_att_no_wh,Recipe source/attribution card
+Algo,Container,b_respl b_sbText > #b_results,Main algorithmic results list
+Algo,Result,b_algo,Individual algo search result
+Algo,People Also Ask,b_ans b_mop > #relatedQnAListDisplay,People Also Ask (PAA) list
+Algo,People Also Ask,[id$=-trigger] / [id$=-content],PAA question trigger and answer content
+Algo,Result-feedback,b_ans b_mop > hlig linkBtn,Algo result feedback / thumbs
+Algo,QnAAnswer_QnAAlsoAsk,#relatedQnAListDisplay [id$=-trigger],People also ask (QnAAlsoAsk)
+Algo,WebResultAnswer_RatingItem,b_algo > b_sritem b_srtxtstarcolor,Rich web result with star rating (customratingitem)
+Algo,WebResultAnswer_RichCaption,b_algo b_rc_gb_template b_rc_gb_template_bg_9 > b_rcGbModHero,Generative rich-caption web result (hero module)
+Algo,WebResultAnswer_RichCaptionCards,b_algo b_rc_gb_template b_rc_gb_template_bg_9 > b_acf_card b_rcGbModCard acf_t_c acf_padding b_acf_bckgnd,Rich-caption sub-cards / image card
+Algo,MultimediaShortVideoAnswer_ShortVideo,b_ans b_mop b_vidAns > vsa apvc cardless noscr vsacf > mc_cwvc,Inline short-video answer (fid ShortVideoInline)
+Algo,WebResultAnswer_GroupedDeeplinks,b_wpt_container lgwjsfix wpt_rmspc > b_gwaDlTitle,Grouped web answer with deeplink list
+BOP Related Search,Container,b_ans > #inline_rs,People also search for (related) block
+BOP Related Search,Title,b_ans > rslist_title b_strong,Related search list title
+BOP Related Search,Pills,b_ans > rsExplr,Related search pills root
+BOP Related Search,Close,b_ans > #rscar_close,Related search carousel close button
+BOP Related Search,RichRSAnswer_Suggestions,b_ans > [RichRSRailSuggestions],Rich related-search rail suggestions
+Pagination,Container,sb_pagF,Pagination list wrapper
+Pagination,Selected,sb_pagF > sb_pagS sb_pagS_bp b_widePag sb_bp sb_pag_first,Selected (current) page button
+Pagination,Page buttons,sb_pagF > sb_pagS sb_pagS_bp b_widePag sb_bp sb_pag_first,Numbered page navigation buttons
